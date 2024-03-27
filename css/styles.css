@@ -1,0 +1,291 @@
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/RobotoCondensed-Regular.ttf);
+}
+
+@font-face {
+  font-family: RobotoMedium;
+  src: url(../fonts/RobotoCondensed-Medium.ttf);
+}
+
+@font-face {
+  font-family: RobotoBold;
+  src: url(../fonts/RobotoCondensed-Bold.ttf);
+}
+
+@font-face {
+  font-family: Pacifico;
+  src: url(../fonts/Pacifico-Regular.ttf);
+}
+
+@font-face {
+  font-family: Sacramento;
+  src: url(../fonts/Sacramento-Regular.ttf);
+}
+
+@font-face {
+  font-family: Sofia;
+  src: url(../fonts/Sofia-Regular.ttf);
+}
+
+:root {
+  --menu-count: 5;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  color: #fff;
+  font-family: Roboto;
+}
+
+.header-main {
+  width: 100%;
+  padding: 0 60px;
+  height: 60px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  font-family: RobotoMedium;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.header-main-title {
+  padding: 0 10px;
+  text-transform: uppercase;
+  font-family: RobotoBold;
+  color: #232020;
+  font-size: larger;
+  text-decoration: none;
+  line-height: 20px;
+}
+
+.header-main nav {
+  display: flex;
+}
+
+.header-main .logo {
+  height: 50px;
+  width: fit-content;
+  align-self: center;
+  cursor: center;
+}
+
+.header-main .logo img {
+  height: 100%;
+}
+
+.header-main ul {
+  height: 100%;
+  padding-left: 40px;
+  list-style: none;
+  display: flex;
+  align-self: center;
+}
+
+.header-main ul li {
+  position: relative;
+}
+
+.header-main ul li a {
+  display: block;
+  padding: 0 10px;
+  height: 100%;
+  line-height: 60px;
+  font-size: 1rem;
+  font-family: RobotoMedium;
+  color: #000000;
+  background-color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all ease-in-out 100ms;
+  text-decoration: none;
+}
+
+.header-main ul li a:hover {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.header-main ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+  position: absolute;
+  left: -40px;
+  transition: all ease-in-out 100ms;
+}
+
+.header-main ul li ul li a {
+  white-space: nowrap;
+}
+
+ul li:hover>ul {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+.header-main .sm {
+  align-self: center;
+  display: flex;
+  margin-right: 20px;
+}
+
+.header-main form {
+  height: 35px;
+  padding-right: 40px;
+  display: flex;
+  border: 1px solid #aeaeae;
+  border-radius: 20px 90px 90px 20px;
+  width: fit-content;
+  align-self: center;
+}
+
+.header-main form input {
+  height: 100%;
+  width: 200px;
+  padding: 0 10px 0 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: Roboto;
+}
+
+.header-main form input:focus {
+  border: 1px solid #111;
+}
+
+.header-main form button {
+  width: 40px;
+  margin-left: 5px;
+  margin-right: 20px;
+}
+
+.header-main form button img {
+  height: 25px;
+  width: 25px;
+}
+
+.main {
+  padding: 80px 40px;
+  width: 600px;
+  line-height: 1.7em;
+  overflow: auto;
+  height: calc(100vh - 100px);
+  display: flow-root;
+}
+
+.column {
+  margin-top: 120px;
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.row {
+  display: flex;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: Roboto;
+}
+
+.column centered{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #05b3a4;
+  min-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top:35%;
+  z-index: 1000;
+}
+
+.footer p {
+  color: #fff;
+  margin: 5px 0 5px 0;
+  font-size: 12px;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("https://i.imgur.com/ZAts69f.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
